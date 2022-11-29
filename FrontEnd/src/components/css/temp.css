@@ -1,0 +1,63 @@
+* {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: lavender;
+}
+
+h2 {
+  margin: 0;
+  color: red;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.box {
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  width: 400px;
+  background: lime;
+  border-radius: 4px;
+}
+.box .logo-container {
+  display: block;
+  padding-bottom: 2rem;
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+}
+.box .logo-container a {
+  text-decoration: none;
+}
+.box .logo-container input {
+  font-size: 1rem;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  padding-bottom: 1rem;
+  width: 100%;
+  outline: none;
+}
+.box .logo-container input:focus {
+  color: teal;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+}
+.box .logo-container input + .box .logo-container input {
+  margin-top: 1rem;
+}
+.box .logo-container footer {
+  margin-top: 2rem;
+  text-align: right;
+}
+.box .logo-container footer a {
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration: none;
+}
+.box .logo-container footer a:hover {
+  color: rgba(0, 0, 0, 0.9);
+}/*# sourceMappingURL=temp.css.map */
