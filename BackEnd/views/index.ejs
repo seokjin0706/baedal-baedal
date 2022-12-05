@@ -7,5 +7,29 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+    <hr>
+    <h1>login test : <%=session.userID%></h1>
+    
+    
+    <form action="user/login" method="post">
+      userID: <input type="text" name="userID"> <br>
+      passWord: <input type="password" name="passWord"> <br>
+      <button>login</button>
+    </form>
+    <form action="user/logout" method="post">
+      <button>logdout</button>
+    </form>
+    <hr>
+    <h1>user create test</h1>
+    <form action="user/create" method="post">
+      userID : <input type="text" name="userID"> <br>
+      passWord: <input type="password" name="passWord"> <br>
+      userName: <input type="text" name="userName"> <br>
+      phoneNumber : <input type="number" name="phoneNumber"> <br>
+      adress : <input type="text" name="adress"> <br>
+      nickName <input type="text" name="nickName"> <br>
+      <button>create</button>
+    </form>
+   
   </body>
 </html>
