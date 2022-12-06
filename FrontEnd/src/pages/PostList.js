@@ -14,6 +14,7 @@ const Posts = () => {
   return (
     <>
       <h1>주문주문 리스트</h1>
+      <button className="writ">글쓰기</button>
       <Post posts={posts} />
     </>
   );
