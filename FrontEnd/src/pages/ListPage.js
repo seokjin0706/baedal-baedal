@@ -1,24 +1,23 @@
+import axios from "axios";
 import React, { useState, useEffect } from "react";
 
 const List = () => {
-  const [posts, setPosts] = useState([]);
+  const [postID, setPostID] = useState([]);
+  const [title, setTitle] = useState([]);
+  const [content, setContent] = useState([]);
+  const [nickName, setNickName] = useState([]);
+  const url = "localhost:3001/post";
 
-  useEffect(() => {
-    fetch("http://localhost:3000/post", { method: "GET" })
-      .then((result) => result.json)
-      .then((data) => {
-        setPosts(data);
-      });
-  }, []);
+  function getList() {
+    axios.get(url).then(function (response) {
+      setPostID(response.data);
+      console.log("데이터 가져옴");
+    });
+  }
 
   return (
     <div>
       <div>리스트 페이지</div>
-      <ul>
-        {posts.map((post) => (
-          <li key={post.id}>{post.title}</li>
-        ))}
-      </ul>
     </div>
   );
 };
