@@ -24,5 +24,23 @@ router.get('/', function (req, res, next) {
       });
 });
 
+/* POST post creating */
+router.post('/create', function(req, res, next){
+  const title = req.body.title;
+  const content = req.body.content;
+  const nickName = req.body.nickName;
+  const insert_sql = {
+    title: title,
+    content: content,
+    nickName: nickName,
+  }
+  connection.query('insert into post set?', insert_sql, (err, rows) => {
+    if (err) throw err;
+    console.log(`${title} create OK`);
+    res.json([insert_sql]);
+  });
+    
+});
+
 
 module.exports = router;
