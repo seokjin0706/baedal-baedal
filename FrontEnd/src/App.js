@@ -1,22 +1,18 @@
-import { Route,Routes } from 'react-router-dom';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import Feed from './pages/Feed';
-import home from './pages/home';
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/HomePage";
+import List from "./pages/ListPage";
+import Login from "./pages/LoginPage";
+import Register from "./pages/RegisterPage";
 
-const App =()=>{
+function App() {
   return (
-    <>
-      
-      <Routes>
-      <Route path="/" element={<home/>} />
-        <Route path="/login" element={<Login/>} />
-        <Route path="/register" element={<Register/>} />
-        <Route path="/feed" element={<Feed/>} exact/>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/List" element={<List />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/Register" element={<Register />} />
     </Routes>
-    </>
   );
-};
-
+}
 
 export default App;
