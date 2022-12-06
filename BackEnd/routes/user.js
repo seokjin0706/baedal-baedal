@@ -63,7 +63,7 @@ router.post('/login', function (req, res, next) {
       req.session.nickName = rows[0].nickName;
       req.session.isLogined = true;
       req.session.save(() => {
-        res.json({"result":"success", "userID": rows[0].userID, "passWord": rows[0].passWord,"userName": rows[0].userName,"phoneNumber": rows[0].phoneNumber ,"adress": rows[0].adress ,"NickName": rows[0].nickName});
+        res.json({"result":"success", "userID": rows[0].userID, "passWord": rows[0].passWord,"userName": rows[0].userName,"phoneNumber": rows[0].phoneNumber ,"adress": rows[0].adress ,"nickName": rows[0].nickName});
       })
     } else {
       res.json({ 'result': 'fail' });
