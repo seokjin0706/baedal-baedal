@@ -16,7 +16,7 @@ connection.connect();
 router.get('/', function (req, res, next) {
   connection.query('select * from post', (err, rows) => {
     if (rows.length) {
-      res.json(JSON.stringify(rows));
+      res.json(rows);
 
     } else {
       res.json({ 'result': 'fail' });
@@ -28,7 +28,7 @@ router.get('/', function (req, res, next) {
 router.get('/:postID', function (req, res, next) {
   connection.query('select * from post where postID=?', [req.params.postID], (err, rows) => {
     if(rows.length){
-      res.json(JSON.stringify(rows));
+      res.json(rows);
     }else{
       res.json({'result' : 'fail'});
     }
