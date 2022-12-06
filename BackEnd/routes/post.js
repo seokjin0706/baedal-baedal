@@ -14,18 +14,29 @@ connection.connect();
 
 /* GET posts listing. */
 router.get('/', function (req, res, next) {
-    connection.query('select * from post', (err, rows) => {
-        if (rows.length) {
-            res.json(JSON.stringify(rows));
+  connection.query('select * from post', (err, rows) => {
+    if (rows.length) {
+      res.json(JSON.stringify(rows));
 
-        }else{
-            res.json({ 'result': 'fail' });
-        }
-      });
+    } else {
+      res.json({ 'result': 'fail' });
+    }
+  });
+});
+
+/* GET post listing */
+router.get('/:postID', function (req, res, next) {
+  connection.query('select * from post where postID=?', [req.params.postID], (err, rows) => {
+    if(rows.length){
+      res.json(JSON.stringify(rows));
+    }else{
+      res.json({'result' : 'fail'});
+    }
+  });
 });
 
 /* POST post creating */
-router.post('/create', function(req, res, next){
+router.post('/create', function (req, res, next) {
   const title = req.body.title;
   const content = req.body.content;
   const nickName = req.body.nickName;
@@ -39,7 +50,7 @@ router.post('/create', function(req, res, next){
     console.log(`${title} create OK`);
     res.json([insert_sql]);
   });
-    
+
 });
 
 
