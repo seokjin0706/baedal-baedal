@@ -5,17 +5,17 @@ const Post = ({ posts }) => {
     <div>
       <div>
         {posts.map((post) => {
-          return <div key={post.id}>{post.title}</div>;
+          return <div key={post.postID}>{post.title}</div>;
         })}
       </div>
       <div>
         {posts.map((post) => {
-          return <div key={post.id}>{post.content}</div>;
+          return <div key={post.postID}>{post.content}</div>;
         })}
       </div>
       <div>
         {posts.map((post) => {
-          return <div key={post.id}>{post.nickName}</div>;
+          return <div key={post.postID}>{post.nickName}</div>;
         })}
       </div>
     </div>
