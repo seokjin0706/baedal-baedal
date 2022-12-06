@@ -6,7 +6,7 @@ const Posts = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    axios.get("https://jsonplaceholder.typicode.com/users").then((response) => {
+    axios.get("http://localhost:3001/post").then((response) => {
       setPosts(response.data);
     });
   }, []);
