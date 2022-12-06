@@ -22,7 +22,7 @@ const Login = () => {
       //session 저장 Start
       sessionStorage.setItem("userID", "userID"); //뒤에 값들을 json에서 빼오면됨  //아마도 ... session.userID
       sessionStorage.setItem("passWord", "password"); //session.passWord
-      sessionStorage.setItem("userName", "UserName"); //session.UserName
+      sessionStorage.setItem("userName", "오바자"); //session.UserName
       sessionStorage.setItem("phoneNumber", "Number"); //session.Number
       sessionStorage.setItem("adress", "adress"); //session.adress
       sessionStorage.setItem("nickName", "닉네임"); //session.nickName

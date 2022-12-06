@@ -6,12 +6,18 @@ const Posts = () => {
   const [posts, setPosts] = useState([]);
   let sessionStorage = window.sessionStorage;
   let userID;
+  let nickName;
   let passWord;
+
   useEffect(() => {
+    nickName = sessionStorage.getItem("nickName");
+    console.log(nickName);
+    document.getElementById("user-nickName").innerHTML = nickName;
+
     //잠깐임시
-    sessionStorage.setItem("userID", "userID"); //뒤에 값들을 json에서 빼오면됨  //아마도 ... session.userID
+    sessionStorage.setItem("userID", "userSJ"); //뒤에 값들을 json에서 빼오면됨  //아마도 ... session.userID
     sessionStorage.setItem("passWord", "p123"); //session.passWord
-    sessionStorage.setItem("userName", "UserName"); //session.UserName
+    sessionStorage.setItem("userName", "오바자"); //session.UserName
     sessionStorage.setItem("phoneNumber", "Number"); //session.Number
     sessionStorage.setItem("adress", "adress"); //session.adress
     sessionStorage.setItem("nickName", "닉네임"); //session.nickName
@@ -38,13 +44,15 @@ const Posts = () => {
   return (
     <>
       <h1>주문주문 리스트</h1>
+
       <button className="writ" onClick={HandlePostCreate}>
         글쓰기
       </button>
-      <button className="userDetail" onClick={HandleUserDetail}>
+      <button className="usermom" onClick={HandleUserDetail}>
         유저 정보 보기
       </button>
-      <div>{"userID"} 님 환영합니다.</div>
+
+      <div id="user-nickName">undefined</div>
       <Post posts={posts} />
     </>
   );
