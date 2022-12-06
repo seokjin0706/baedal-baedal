@@ -6,7 +6,7 @@ const Post = ({ posts }) => {
       <div>
         {posts.map((post) => {
           return (
-            <div className="list-title" key={post.postID}>
+            <div className="list-title" key={post.id}>
               {post.title}
             </div>
           );
@@ -15,7 +15,7 @@ const Post = ({ posts }) => {
       <div>
         {posts.map((post) => {
           return (
-            <div key={post.postID} className="list-content">
+            <div key={post.id} className="list-content">
               {post.content}
             </div>
           );
@@ -24,7 +24,7 @@ const Post = ({ posts }) => {
       <div>
         {posts.map((post) => {
           return (
-            <div key={post.postID} className="list-nickName">
+            <div key={post.id} className="list-nickName">
               {post.nickName}
             </div>
           );

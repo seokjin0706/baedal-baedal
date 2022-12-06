@@ -4,16 +4,9 @@ import "../css/LoginPage.css";
 const Login = () => {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
-  const [saveId, setSaveId] = useState(""); //test용 지울것
-  let sessionStorage = window.sessionStorage;
+  const [session, setSession] = useState("");
 
-  const SessionTest = (e) => {
-    //test용 지울것
-    sessionStorage.setItem("saveId", saveId);
-    setSaveId(sessionStorage.getItem("saveId"));
-    console.log("saveID : " + saveId);
-    document.location.href = "/List";
-  };
+  let sessionStorage = window.sessionStorage;
 
   const handleLogin = (e) => {
     const loginBox = { id, password };
@@ -22,9 +15,18 @@ const Login = () => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(loginBox),
-    }).then(() => {
+    }).then((response) => {
+      setSession(response.data);
+
       console.log("로그인성공");
-      sessionStorage.setItem("id", id);
+      //session 저장 Start
+      sessionStorage.setItem("userID", "userID"); //뒤에 값들을 json에서 빼오면됨  //아마도 ... session.userID
+      sessionStorage.setItem("passWord", "password"); //session.passWord
+      sessionStorage.setItem("userName", "UserName"); //session.UserName
+      sessionStorage.setItem("phoneNumber", "Number"); //session.Number
+      sessionStorage.setItem("adress", "adress"); //session.adress
+      sessionStorage.setItem("nickName", "닉네임"); //session.nickName
+      //session 저장 End
       document.location.href = "/List"; //리스트 페이지로 이동
     });
   };
@@ -34,13 +36,6 @@ const Login = () => {
       <div className="co">
         <div className="Container">
           <h1 className="title">로그인</h1>
-
-          <input
-            type="text"
-            placeholder="IdSessionTest"
-            className="form"
-            onChange={(e) => setSaveId(e.target.value)}
-          ></input>
 
           <input
             type="text"
@@ -56,9 +51,6 @@ const Login = () => {
           />
           <button className="btn-login" onClick={handleLogin}>
             로그인
-          </button>
-          <button className="SessionTest" onClick={SessionTest}>
-            SessionTest
           </button>
           <a href="/Register">회원가입</a>
         </div>

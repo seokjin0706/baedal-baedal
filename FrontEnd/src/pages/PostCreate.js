@@ -1,10 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../css/PostCreate.css";
 
 const PostCreate = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const [nickName, setNickName] = useState("");
+  let nickName;
+  let sessionStorage = window.sessionStorage;
+
+  useEffect(() => {
+    nickName = sessionStorage.getItem("nickName");
+    console.log(nickName);
+  }, []);
 
   const handlePostCreate = (e) => {
     const PostCreateBox = { title, content, nickName };
@@ -35,13 +41,6 @@ const PostCreate = () => {
             placeholder="본문을 적어주세요"
             className="input-content"
             onChange={(e) => setContent(e.target.value)}
-          />
-
-          <input
-            type="text"
-            placeholder="닉네임을 적어주세요 // 세션에서 값받아오는걸로 바꾸기"
-            className="input-nickName"
-            onChange={(e) => setNickName(e.target.value)}
           />
 
           <button className="btn-postCreate" onClick={handlePostCreate}>
