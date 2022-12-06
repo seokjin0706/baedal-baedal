@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <item
+        android:id="@+id/homeFragment"
+        android:title="홈"
+        android:icon="@drawable/ic_launcher_background"
+        tools:ignore="HardcodedText" />
+    <item
+        android:id="@+id/chatFragment"
+        android:title="채팅"
+        android:icon="@drawable/ic_launcher_background"
+        tools:ignore="HardcodedText" />
+    <item
+        android:id="@+id/myPageFragment"
+        android:title="마이페이지"
+        android:icon="@drawable/ic_launcher_background"
+        tools:ignore="HardcodedText" />
+</menu>

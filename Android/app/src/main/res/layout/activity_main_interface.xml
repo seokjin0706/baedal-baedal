@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainInterfaceActivity"
+    android:orientation="vertical"
+    android:background="@color/white">
+    <!-- 타이틀 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="배달배달"
+        android:textSize="25sp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/my_font"
+        android:textColor="@color/black">
+    </TextView>
+
+    <!-- 상단바 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:contentInsetStart="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <androidx.appcompat.widget.SearchView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="9">
+        <ListView
+            android:id="@+id/sentenceListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginBottom="3dp"
+            android:layout_marginRight="3dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp">
+        <Button
+            android:id="@+id/writeBtn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="글쓰기"
+            android:fontFamily="@font/my_small_font"
+            android:background="@drawable/round"
+            android:textSize="15sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="30dp">
+        <Button
+            android:id="@+id/homeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="홈"
+            android:fontFamily="@font/my_small_font"
+            android:textColor="@color/white"
+            android:background="@drawable/second_round"
+            android:layout_margin="3dp"
+            android:textSize="15sp"/>
+        <Button
+            android:id="@+id/chatBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="채팅"
+            android:fontFamily="@font/my_small_font"
+            android:textColor="@color/white"
+            android:background="@drawable/second_round"
+            android:layout_margin="3dp"
+            android:textSize="15sp"/>
+        <Button
+            android:id="@+id/myPageBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="마이페이지"
+            android:fontFamily="@font/my_small_font"
+            android:textColor="@color/white"
+            android:background="@drawable/second_round"
+            android:layout_margin="3dp"
+            android:textSize="15sp"/>
+    </LinearLayout>
+
+
+</LinearLayout>

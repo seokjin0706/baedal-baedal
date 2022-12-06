@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 로그인 화면 구성 -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="배달배달"
+        android:textSize="40dp"
+        android:fontFamily="@font/my_font"
+        android:layout_marginTop="60dp"
+        android:textColor="@color/black">
+    </TextView>
+
+    <!-- 이미지 or 아이콘 -->
+    <ImageView
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:background="@null"
+        android:src="@drawable/baedal_img"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp">
+    </ImageView>
+
+    <!-- 사용자 입력 부분 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <!-- 아이디 입력 부분-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="6"
+            android:layout_marginBottom="5dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="아이디: "
+                android:textSize="17sp"
+                android:layout_weight="4"
+                android:gravity="right"
+                android:fontFamily="@font/my_small_font">
+            </TextView>
+
+            <EditText
+                android:id="@+id/idEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="아이디 입력 부분"
+                android:textSize="15sp"
+                android:layout_weight="2"
+                android:layout_marginRight="50dp"
+                android:fontFamily="@font/my_small_font">
+            </EditText>
+
+        </LinearLayout>
+
+        <!-- 비민번호 입력 부분-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="6"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="비밀번호: "
+                android:textSize="17sp"
+                android:layout_weight="4"
+                android:gravity="right"
+                android:fontFamily="@font/my_small_font">
+            </TextView>
+
+            <EditText
+                android:id="@+id/passwdEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="비민번호 입력 부분"
+                android:textSize="15sp"
+                android:layout_marginRight="50dp"
+                android:layout_weight="2"
+                android:fontFamily="@font/my_small_font">
+            </EditText>
+
+        </LinearLayout>
+
+        <!-- 이름 입력 부분-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="6"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="이름: "
+                android:textSize="17sp"
+                android:layout_weight="4"
+                android:gravity="right"
+                android:fontFamily="@font/my_small_font">
+            </TextView>
+
+            <EditText
+                android:id="@+id/nameEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="이름 입력 부분"
+                android:textSize="15sp"
+                android:layout_marginRight="50dp"
+                android:layout_weight="2"
+                android:fontFamily="@font/my_small_font">
+            </EditText>
+
+        </LinearLayout>
+
+        <!-- 전화번호 입력 부분-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="6"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="전화번호: "
+                android:textSize="17sp"
+                android:layout_weight="4"
+                android:gravity="right"
+                android:fontFamily="@font/my_small_font">
+            </TextView>
+
+            <EditText
+                android:id="@+id/phoneEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="전화번호 입력 부분"
+                android:textSize="15sp"
+                android:layout_marginRight="50dp"
+                android:layout_weight="2"
+                android:fontFamily="@font/my_small_font">
+            </EditText>
+
+        </LinearLayout>
+
+        <!-- 주소 입력 부분-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="6"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="주소: "
+                android:textSize="17sp"
+                android:layout_weight="4"
+                android:gravity="right"
+                android:fontFamily="@font/my_small_font">
+            </TextView>
+
+            <EditText
+                android:id="@+id/addressEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="주소 입력 부분"
+                android:textSize="15sp"
+                android:layout_marginRight="50dp"
+                android:layout_weight="2"
+                android:fontFamily="@font/my_small_font">
+            </EditText>
+
+        </LinearLayout>
+
+        <!-- 닉네임 입력 부분-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="6">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="닉네임: "
+                android:textSize="17sp"
+                android:layout_weight="4"
+                android:gravity="right">
+            </TextView>
+
+            <EditText
+                android:id="@+id/nicknameEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="닉네임 입력 부분"
+                android:textSize="15sp"
+                android:layout_marginRight="50dp"
+                android:layout_weight="2">
+            </EditText>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <!-- 회원가입 및 로그인 버튼 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="40dp">
+
+
+
+        <Button
+            android:id="@+id/resetBtn"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:text="다시입력"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/my_small_font"
+            android:background="@drawable/round">
+        </Button>
+
+        <Button
+            android:id="@+id/signUpBtn2"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:background="@drawable/second_round"
+            android:layout_gravity="center"
+            android:text="회원가입"
+            android:fontFamily="@font/my_small_font"
+            android:textColor="@color/white">
+        </Button>
+
+    </LinearLayout>
+
+</LinearLayout>
