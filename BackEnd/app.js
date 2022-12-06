@@ -6,6 +6,7 @@ const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const userRouter = require('./routes/user');
+const postRouter = require('./routes/post');
 const app = express();
 
 const session = require('express-session');
@@ -16,6 +17,8 @@ const options = {
   password :'passwd',
   database: 'baedal',
 };
+
+const cors = require('cors');
 
 const sessionStore = new MySQLStore(options);
 app.use(session({
@@ -35,10 +38,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
+app.use(cors());
 app.use('/', indexRouter);
 app.use('/user', userRouter);
-
+app.use('/post', postRouter);
 
 
 // catch 404 and forward to error handler
