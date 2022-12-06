@@ -82,7 +82,7 @@ router.post('/logout', function (req, res, next) {
   delete req.session.nickName;
   delete req.session.isLogined;
   req.session.save(() => {
-    res.redirect('/');
+    res.json({ 'result': 'success' });
   })
 });
 
