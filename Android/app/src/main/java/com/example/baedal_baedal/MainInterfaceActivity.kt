@@ -1,23 +1,43 @@
 package com.example.baedal_baedal
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ListView
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 
 class MainInterfaceActivity : AppCompatActivity() {
 
-    /*private lateinit var binding: ActivityMainInterfaceBinding*/
+    var PREFS_KEY = "prefs"
+    var userID_KEY = "userID"
+    var passWord_KEY = "passWord"
+    var userName_KEY = "userName"
+    var phoneNumber_KEY = "phoneNumber"
+    var adress_KEY = "adress"
+    var nickName_KEY = "nickName"
+
+    lateinit var sharedPreferences: SharedPreferences
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_interface)
+
+        // 세션
+        sharedPreferences = getSharedPreferences(PREFS_KEY, Context.MODE_PRIVATE)
+        var userID = sharedPreferences.getString(userID_KEY, null)!!
+        var passWord = sharedPreferences.getString(passWord_KEY, null)!!
+        var userName = sharedPreferences.getString(userName_KEY, null)!!
+        var phoneNumber = sharedPreferences.getString(phoneNumber_KEY, null)!!
+        var adress = sharedPreferences.getString(adress_KEY, null)!!
+        var nickName = sharedPreferences.getString(nickName_KEY, null)!!
+        Log.d("MMMM", "MainInterface - $userID  $passWord  $userName  $phoneNumber  $adress  $nickName")
 
         val writeBtn = findViewById<Button>(R.id.writeBtn)
         val chatBtn = findViewById<Button>(R.id.chatBtn)
@@ -26,11 +46,6 @@ class MainInterfaceActivity : AppCompatActivity() {
         val writeIntent = Intent(this, WriteActivity::class.java)
         val chatIntent = Intent(this, ChatActivity::class.java)
         val myPageIntent = Intent(this, MyPageActivity::class.java)
-
-        /*binding = ActivityMainInterfaceBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)*/
-
 
         val sentenceList = arrayListOf<ListViewModel>(
             ListViewModel("ic_launcher_background", "박", "정왕1", "제목1", "내용1"),
