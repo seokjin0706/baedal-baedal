@@ -6,7 +6,7 @@ import FooList from "./FooList";
 const List = () => {
   const [SessionId, setSessionId] = useState("");
   const [posts, setPosts] = useState("");
-  const url = "https://localhost/post:3001";
+  const url = "http://localhost:3001/post";
   let sessionStorage = window.sessionStorage;
   //const foodset = document.getElementsByClassName("food_list");
 
