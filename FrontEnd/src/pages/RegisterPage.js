@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const RegisterPage = () => {
-  const [id, setId] = useState("");
+  const [userID, setId] = useState("");
   const [passWord, setPassword] = useState("");
   const [userName, setUserName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -10,7 +10,7 @@ const RegisterPage = () => {
 
   const handleRegister = (e) => {
     const registerBox = {
-      id,
+      userID,
       passWord,
       userName,
       phoneNumber,
@@ -23,7 +23,7 @@ const RegisterPage = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(registerBox),
     }).then(() => {
-      console.log("로그인성공");
+      console.log("회원가입성공");
     });
   };
 
