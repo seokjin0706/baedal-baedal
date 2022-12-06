@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 로그인 화면 구성 -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    >
+
+    <!-- 화면 상단 부분 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="배달배달"
+        android:textSize="40dp"
+        android:fontFamily="@font/my_font"
+        android:layout_marginTop="100dp"
+        android:textColor="@color/black">
+    </TextView>
+
+    <!-- 이미지 or 아이콘 -->
+    <ImageView
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:background="@null"
+        android:src="@drawable/baedal_img"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="60dp">
+    </ImageView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="40dp">
+        <!-- 아이디 입력 부분-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="6"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ID:"
+                android:textSize="20sp"
+                android:layout_weight="4.5"
+                android:gravity="right"
+                android:fontFamily="@font/my_small_font">
+            </TextView>
+
+            <EditText
+                android:id="@+id/loginIdEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="아이디 입력 부분"
+                android:layout_weight="1.5"
+                android:textSize="15sp"
+                android:layout_marginRight="70dp"
+                android:fontFamily="@font/my_small_font">
+            </EditText>
+
+        </LinearLayout>
+
+        <!-- 비밀번호 입력 부분-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="6">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="PW:"
+                android:textSize="20sp"
+                android:layout_weight="4.5"
+                android:gravity="right"
+                android:fontFamily="@font/my_small_font">
+            </TextView>
+
+            <EditText
+                android:id="@+id/loginPasswdEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="비밀번호 입력 부분"
+                android:layout_weight="1.5"
+                android:textSize="15sp"
+                android:layout_marginRight="70dp"
+                android:fontFamily="@font/my_small_font">
+            </EditText>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <!-- 회원가입 및 로그인 버튼 -->
+    <LinearLayout
+        android:weightSum="10"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/loginBtn"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:text="로그인"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/my_small_font"
+            android:background="@drawable/round">
+        </Button>
+
+        <Button
+            android:id="@+id/signUpBtn"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:background="@drawable/second_round"
+            android:layout_gravity="center"
+            android:text="회원가입"
+            android:fontFamily="@font/my_small_font"
+            android:textColor="@color/white">
+        </Button>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
