@@ -2,20 +2,32 @@ import React from "react";
 
 const Post = ({ posts }) => {
   return (
-    <div>
+    <div className="list-container">
       <div>
         {posts.map((post) => {
-          return <div key={post.postID}>{post.title}</div>;
+          return (
+            <div className="list-title" key={post.postID}>
+              {post.title}
+            </div>
+          );
         })}
       </div>
       <div>
         {posts.map((post) => {
-          return <div key={post.postID}>{post.content}</div>;
+          return (
+            <div key={post.postID} className="list-content">
+              {post.content}
+            </div>
+          );
         })}
       </div>
       <div>
         {posts.map((post) => {
-          return <div key={post.postID}>{post.nickName}</div>;
+          return (
+            <div key={post.postID} className="list-nickName">
+              {post.nickName}
+            </div>
+          );
         })}
       </div>
     </div>

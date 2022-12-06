@@ -13,7 +13,7 @@ const Posts = () => {
 
   return (
     <>
-      <h1>setPosts</h1>
+      <h1>주문주문 리스트</h1>
       <Post posts={posts} />
     </>
   );
