@@ -6,7 +6,7 @@ import FooList from "./FooList";
 const List = () => {
   const [SessionId, setSessionId] = useState("");
   const [posts, setPosts] = useState("");
-  const url = "https://my-json-server.typicode.com/typicode/demo/posts";
+  const url = "https://localhost/post:3001";
   let sessionStorage = window.sessionStorage;
   //const foodset = document.getElementsByClassName("food_list");
 
