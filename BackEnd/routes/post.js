@@ -46,9 +46,13 @@ router.post('/create', function (req, res, next) {
     nickName: nickName,
   }
   connection.query('insert into post set?', insert_sql, (err, rows) => {
-    if (err) throw err;
-    console.log(`${title} create OK`);
-    res.json([insert_sql]);
+    if (err){
+      console.log(err);
+      res.json({ 'result': 'fail' });
+    }else{
+      console.log(`${title} create OK`);
+      res.json([insert_sql]);
+    }
   });
 
 });
