@@ -9,7 +9,13 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.ListView
-
+import org.json.JSONArray
+import org.json.JSONObject
+import java.io.BufferedReader
+import java.io.DataOutputStream
+import java.io.InputStreamReader
+import java.net.HttpURLConnection
+import java.net.URL
 
 
 class MainInterfaceActivity : AppCompatActivity() {
@@ -46,25 +52,37 @@ class MainInterfaceActivity : AppCompatActivity() {
         val writeIntent = Intent(this, WriteActivity::class.java)
         val chatIntent = Intent(this, ChatActivity::class.java)
         val myPageIntent = Intent(this, MyPageActivity::class.java)
+        var jsonString : String? = ""
 
-        val sentenceList = arrayListOf<ListViewModel>(
-            ListViewModel("ic_launcher_background", "박", "정왕1", "제목1", "내용1"),
-            ListViewModel("ic_launcher_background", "박2", "정왕2", "제목2", "내용2"),
-            ListViewModel("ic_launcher_background", "박", "정왕1", "제목1", "내용1"),
-            ListViewModel("ic_launcher_background", "박2", "정왕2", "제목2", "내용2"),
-            ListViewModel("ic_launcher_background", "박", "정왕1", "제목1", "내용1"),
-            ListViewModel("ic_launcher_background", "박2", "정왕2", "제목2", "내용2"),
-            ListViewModel("ic_launcher_background", "박", "정왕1", "제목1", "내용1"),
-            ListViewModel("ic_launcher_background", "박2", "정왕2", "제목2", "내용2"),
-            ListViewModel("ic_launcher_background", "박", "정왕1", "제목1", "내용1"),
-            ListViewModel("ic_launcher_background", "박2", "정왕2", "제목2", "내용2"),
-        )
+        Thread{
+            val url = URL("http://10.0.2.2:3001/post")
 
+            val conn = url.openConnection() as HttpURLConnection
+            conn.requestMethod = "GET"
+             BufferedReader(InputStreamReader(conn.inputStream)).use { br ->
+                var line: String?
+                while (br.readLine().also { line = it } != null) {
+                    jsonString  = line
 
-        val sentenceAdapter = ListViewAdapter(this, sentenceList)
-        val listview = findViewById<ListView>(R.id.sentenceListView)
+                }
+            }
+            val sentenceList = arrayListOf<ListViewModel>()
+            val jArray = JSONArray(jsonString)
+            for(i in 0 until jArray.length()){
+                val jObject = jArray.getJSONObject(i)
+                val title = jObject.getString("title");
+                val content = jObject.getString("content")
+                val nickName = jObject.getString("nickName")
+                sentenceList.add(ListViewModel("ic_launcher_background", title,"정왕동", content, nickName))
+            }
 
-        listview.adapter = sentenceAdapter
+            val sentenceAdapter = ListViewAdapter(this, sentenceList)
+            val listview = findViewById<ListView>(R.id.sentenceListView)
+
+            listview.adapter = sentenceAdapter
+
+        }.start()
+
 
         writeBtn.setOnClickListener {
             startActivity(writeIntent)
