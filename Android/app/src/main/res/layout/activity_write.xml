@@ -28,8 +28,9 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="제목"
-            android:fontFamily="@font/my_small_font"
-            android:textColor="@color/black"/>
+            android:fontFamily="@font/my_font"
+            android:textColor="@color/black"
+            android:textSize="15sp"/>
 
         <EditText
             android:id="@+id/title_et"
@@ -37,6 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textSize="15sp"
             android:hint="제목을 입력하세요."
             />
     </LinearLayout>
@@ -45,7 +47,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:text="내용"/>
+        android:text="내용"
+        android:fontFamily="@font/my_font"/>
 
     <EditText
         android:id="@+id/content_et"
@@ -53,17 +56,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:background="#eeeeee"
+        android:background="@drawable/show_write_round"
         android:hint="내용을 입력하세요."
         />
 
     <Button
         android:id="@+id/reg_button"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:text="등록하기"
-        android:textColor="#FFFFFF"
-        android:background="#C62828"/>
+        android:background="@drawable/second_round"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/my_small_font"
+        android:textColor="@color/white"
+        android:textSize="15dp"/>
 
 
 </LinearLayout>

@@ -84,10 +84,7 @@ class MainActivity : AppCompatActivity() {
                         val jsonString = line
                         val jObject = JSONObject(jsonString)
                         result = jObject.getString("result")
-                        if(result.equals("fail")) {
-                            runOnUiThread { Toast.makeText(this, "아이디가 존재하지 않거나 비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show() }
-                            break
-                        }
+                        if(result.equals("fail")) break
                         userID = jObject.getString("userID")
                         passWord = jObject.getString("passWord")
                         userName = jObject.getString("userName")
