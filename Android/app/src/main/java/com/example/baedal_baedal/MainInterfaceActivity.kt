@@ -74,12 +74,14 @@ class MainInterfaceActivity : AppCompatActivity() {
                 val title = jObject.getString("title");
                 val content = jObject.getString("content")
                 val nickName = jObject.getString("nickName")
+                val postID = jObject.getString("postID")
                 sentenceList.add(ListViewModel("ic_launcher_background", nickName, "정왕동",title,content))
                 val element = HashMap<String, String>()
                 element.put("title", title)
                 element.put("content", content)
                 element.put("nickName", nickName)
                 element.put("address", "정왕동")
+                element.put("postID", postID)
                 data.add(element)
 
             }

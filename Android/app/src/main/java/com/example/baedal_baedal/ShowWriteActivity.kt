@@ -31,6 +31,8 @@ class ShowWriteActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.chatBtn2).setOnClickListener {
             val chatIntent = Intent(this, ChattingActivity::class.java)
+            chatIntent.putExtra("postID",  data[index].getValue("postID"))
+            chatIntent.putExtra("title",  data[index].getValue("title"))
             startActivity(chatIntent)
         }
     }

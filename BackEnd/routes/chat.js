@@ -19,7 +19,7 @@ router.get('/:postID', function (req, res, next) {
     if(rows.length){
       res.json(rows);
     }else{
-      res.json({'result' : 'fail'});
+      res.json([{'result' : 'fail', 'postID' : 0}]);
     }
   });
 });
