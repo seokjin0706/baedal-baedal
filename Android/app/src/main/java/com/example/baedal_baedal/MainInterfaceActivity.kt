@@ -64,7 +64,7 @@ class MainInterfaceActivity : AppCompatActivity() {
         var food = arrayOf("보쌈", "족발", "돈까스", "피자", "치킨", "중식", "양식", "일식", "한식")
         var spinner1 = findViewById<Spinner>(R.id.spinner2)
         var adapter1: ArrayAdapter<String>
-        adapter1 = ArrayAdapter(this, android.R.layout.simple_spinner_item, location)
+        adapter1 = ArrayAdapter(this, android.R.layout.simple_spinner_item, food)
         spinner1.adapter = adapter1
 
         Thread{
