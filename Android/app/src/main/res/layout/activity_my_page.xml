@@ -1,20 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:padding="16dp"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-    <!-- 타이틀 -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="배달배달"
-        android:textStyle="bold"
-        android:textSize="25sp"
-        android:layout_margin="10dp"
-        >
-    </TextView>
+    android:orientation="vertical"
+    android:background="@color/white">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -49,17 +38,26 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:src="@mipmap/ic_launcher"/>
-
-                <TextView
-                    android:id="@+id/date_tv"
-                    android:padding="16dp"
+                <LinearLayout
                     android:background="#eeeeee"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="닉네임 / 신뢰도\n주소"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/nicknameTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="닉네임 / 신뢰도"/>
+                    <TextView
+                        android:id="@+id/addressTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="주소"/>
+                </LinearLayout>
 
-                    />
+
             </LinearLayout>
             <TextView
                 android:layout_width="match_parent"
@@ -93,33 +91,59 @@
         </LinearLayout>
     </ScrollView>
 
-    <Button
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="로그아웃"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp">
+        <Button
+            android:id="@+id/logoutBtn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="로그아웃"
+            android:fontFamily="@font/my_small_font"
+            android:background="@drawable/round"
+            android:textSize="15sp"/>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="30dp">
         <Button
             android:id="@+id/homeBtn"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:text="홈"/>
+            android:text="홈"
+            android:fontFamily="@font/my_small_font"
+            android:textColor="@color/white"
+            android:background="@drawable/second_round"
+            android:layout_margin="3dp"
+            android:textSize="15sp"/>
         <Button
             android:id="@+id/chatBtn"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:text="채팅"/>
+            android:text="채팅"
+            android:fontFamily="@font/my_small_font"
+            android:textColor="@color/white"
+            android:background="@drawable/second_round"
+            android:layout_margin="3dp"
+            android:textSize="15sp"/>
         <Button
             android:id="@+id/myPageBtn"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:text="마이페이지"/>
+            android:text="마이페이지"
+            android:fontFamily="@font/my_small_font"
+            android:textColor="@color/white"
+            android:background="@drawable/second_round"
+            android:layout_margin="3dp"
+            android:textSize="15sp"/>
     </LinearLayout>
-
 </LinearLayout>
