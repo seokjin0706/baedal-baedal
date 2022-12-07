@@ -15,7 +15,7 @@ const Post = ({ posts }) => {
       <div>
         {posts.map((post) => {
           return (
-            <div key={post.postID} className="list-content">
+            <div key={post.postID} className="list-content" maxlength="10">
               {post.content}
             </div>
           );

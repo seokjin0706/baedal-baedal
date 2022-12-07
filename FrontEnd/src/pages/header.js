@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import "../css/Header.css";
+import { FaRocketchat, FaClipboardList, FaUserAlt } from "react-icons/fa";
 
 function Header(props) {
   const [nickNamea, nickNameSet] = useState([]);
@@ -24,13 +25,19 @@ function Header(props) {
         </div>
         <div className="box-icon">
           <a href="/List">
-            <div className="icon">리스트</div>
+            <div className="icon">
+              <FaClipboardList size="34" />
+            </div>
           </a>
           <a href="/chat">
-            <div className="icon">채팅방</div>
+            <div className="icon">
+              <FaRocketchat size="34" />
+            </div>
           </a>
           <a href="/userDetail">
-            <div className="icon">자세히</div>
+            <div className="icon">
+              <FaUserAlt size="34" />
+            </div>
           </a>
         </div>
       </header>
