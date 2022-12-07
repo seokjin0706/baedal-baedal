@@ -6,26 +6,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
-    android:layout_margin="5dp"
-    android:id="@+id/list_item">
+    android:background="@color/white"
+    android:padding="5dp">
 
     <ImageView
         android:id="@+id/userImg"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:background="@drawable/list_img_round"/>
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/test_img"
+        android:background="@drawable/list_img_round"
+        android:layout_marginEnd="10dp"/>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="90dp"
+        android:layout_height="80dp"
         android:orientation="vertical"
         android:weightSum="3"
         android:background="@drawable/list_round"
-        android:paddingTop="3dp">
+        android:padding="5dp">
 
         <TextView
             android:id="@+id/titleTxt"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -34,8 +36,8 @@
             android:fontFamily="@font/my_font"
             android:layout_weight="1"/>
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginStart="16dp"
             android:layout_marginBottom="2dp"
@@ -43,7 +45,7 @@
 
             <TextView
                 android:id="@+id/nameTxt"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
                 android:text="Name"
@@ -51,7 +53,7 @@
 
             <TextView
                 android:id="@+id/addressTxt"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:textSize="16sp"
@@ -61,7 +63,7 @@
         <TextView
             android:id="@+id/contentTxt"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:textSize="16sp"
             android:text="Content"

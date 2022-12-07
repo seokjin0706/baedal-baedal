@@ -94,7 +94,8 @@
                 android:layout_weight="1.5"
                 android:textSize="15sp"
                 android:layout_marginRight="70dp"
-                android:fontFamily="@font/my_small_font">
+                android:fontFamily="@font/my_small_font"
+                android:inputType="textPassword">
             </EditText>
 
         </LinearLayout>
