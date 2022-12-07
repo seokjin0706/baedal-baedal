@@ -1,5 +1,6 @@
 package com.example.baedal_baedal
 
 data class ListViewModel2 (
-    val content : String
+    val sender : String,
+    val message : String
 )

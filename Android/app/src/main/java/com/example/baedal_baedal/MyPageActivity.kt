@@ -30,7 +30,7 @@ class MyPageActivity : AppCompatActivity() {
 
         val loginIntent = Intent(this, MainActivity::class.java)
         val homeIntent = Intent(this, MainInterfaceActivity::class.java)
-        val chatIntent = Intent(this, ChatActivity::class.java)
+        val chatIntent = Intent(this, ChattingActivity::class.java)
         val myPageIntent = Intent(this, MyPageActivity::class.java)
 
         // nicknameTxt, addressTxt
