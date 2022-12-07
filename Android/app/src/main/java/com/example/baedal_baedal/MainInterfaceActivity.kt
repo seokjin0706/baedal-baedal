@@ -7,8 +7,10 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
+import android.widget.Spinner
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.BufferedReader
@@ -53,6 +55,18 @@ class MainInterfaceActivity : AppCompatActivity() {
         val myPageIntent = Intent(this, MyPageActivity::class.java)
         var jsonString : String? = ""
 
+        var location = arrayOf("정왕1동", "정왕2동", "정왕3동", "정왕4동")
+        var spinner = findViewById<Spinner>(R.id.spinner)
+        var adapter: ArrayAdapter<String>
+        adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, location)
+        spinner.adapter = adapter
+
+        var food = arrayOf("보쌈", "족발", "돈까스", "피자", "치킨", "중식", "양식", "일식", "한식")
+        var spinner1 = findViewById<Spinner>(R.id.spinner2)
+        var adapter1: ArrayAdapter<String>
+        adapter1 = ArrayAdapter(this, android.R.layout.simple_spinner_item, location)
+        spinner1.adapter = adapter1
+
         Thread{
             val url = URL("http://10.0.2.2:3001/post")
 
@@ -81,7 +95,6 @@ class MainInterfaceActivity : AppCompatActivity() {
                 element.put("nickName", nickName)
                 element.put("address", "정왕동")
                 data.add(element)
-
             }
 
             val sentenceAdapter = ListViewAdapter(this, sentenceList)
