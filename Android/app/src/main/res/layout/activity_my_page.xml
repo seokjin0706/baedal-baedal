@@ -22,10 +22,10 @@
                 android:padding="16dp"
                 android:text="마이페이지"
                 android:textSize="18sp"
-                android:textStyle="bold"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:background="@drawable/border_line"/>
+                android:background="@drawable/border_line"
+                android:fontFamily="@font/my_font"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -39,22 +39,66 @@
                     android:layout_height="wrap_content"
                     android:src="@mipmap/ic_launcher"/>
                 <LinearLayout
-                    android:background="#eeeeee"
+                    android:background="@drawable/list_round"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
-                    <TextView
-                        android:id="@+id/nicknameTxt"
+                    android:orientation="vertical"
+                    android:padding="5dp"
+                    >
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="닉네임 / 신뢰도"/>
-                    <TextView
-                        android:id="@+id/addressTxt"
+                        android:layout_height="30dp"
+                        android:orientation="horizontal"
+                        android:weightSum="4"
+                        android:layout_marginTop="6dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="닉네임 :"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/my_font"
+                            android:layout_weight="3.1"
+                            android:gravity="right"/>
+                        <TextView
+                            android:id="@+id/nicknameTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="닉네임 부분"
+                            android:layout_marginStart="15dp"
+                            android:fontFamily="@font/my_small_font"
+                            android:textSize="15sp"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.9"/>
+
+                    </LinearLayout>
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="주소"/>
+                        android:layout_height="30dp"
+                        android:orientation="horizontal"
+                        android:weightSum="4">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="주소 :"
+                            android:layout_marginStart="15dp"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/my_font"
+                            android:layout_weight="3.1"
+                            android:gravity="right"/>
+                        <TextView
+                            android:id="@+id/addressTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="주소 부분"
+                            android:layout_marginStart="15dp"
+                            android:fontFamily="@font/my_small_font"
+                            android:textSize="15sp"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.9"/>
+
+                    </LinearLayout>
+
+
                 </LinearLayout>
 
 
@@ -64,11 +108,11 @@
                 android:layout_height="wrap_content"
                 android:padding="16dp"
                 android:text="내가 작성한 글"
-                android:textStyle="bold"
                 android:layout_gravity="center"
                 android:background="@drawable/border_line"
-                android:gravity="center"/>
-
+                android:gravity="center"
+                android:fontFamily="@font/my_font"
+                android:textSize="16sp"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
