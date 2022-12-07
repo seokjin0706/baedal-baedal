@@ -34,7 +34,6 @@ class MainInterfaceActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_interface)
 
-        val showWriteIntent = Intent(this, ShowWriteActivity::class.java)
         // 세션
         sharedPreferences = getSharedPreferences(PREFS_KEY, Context.MODE_PRIVATE)
         var userID = sharedPreferences.getString(userID_KEY, null)!!
@@ -69,23 +68,29 @@ class MainInterfaceActivity : AppCompatActivity() {
             val listview = findViewById<ListView>(R.id.sentenceListView)
             val sentenceList = arrayListOf<ListViewModel>()
             val jArray = JSONArray(jsonString)
+            var data = ArrayList<HashMap<String, String> >()
             for(i in 0 until jArray.length()){
                 val jObject = jArray.getJSONObject(i)
                 val title = jObject.getString("title");
                 val content = jObject.getString("content")
                 val nickName = jObject.getString("nickName")
                 sentenceList.add(ListViewModel("ic_launcher_background", nickName, "정왕동",title,content))
+                val element = HashMap<String, String>()
+                element.put("title", title)
+                element.put("content", content)
+                element.put("nickName", nickName)
+                element.put("address", "정왕동")
+                data.add(element)
 
             }
 
             val sentenceAdapter = ListViewAdapter(this, sentenceList)
             listview.setOnItemClickListener { parent, view, position, id ->
-
+                val showWriteIntent = Intent(this, ShowWriteActivity::class.java)
+                showWriteIntent.putExtra("data", data)
+                showWriteIntent.putExtra("index", position)
                 startActivity(showWriteIntent)
-
-
             }
-
             listview.adapter = sentenceAdapter
 
         }.start()
