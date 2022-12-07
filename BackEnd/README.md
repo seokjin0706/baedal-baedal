@@ -10,4 +10,4 @@
 |전체 게시글 목록 보기|GET|/post||``` [{"postID":int", title":string, "content": string,"nickName": string}] ```|```[{"result":"fail"}] ```|
 |특정 게시글 목록 보기|GET|/post/:postID||```[{"postID":int, "title":string, "content": string,"nickName": string}] ```|```[{"result":"fail"}] ```|
 |채팅방 정보 얻기|GET|/chat/:postID||```[{"chatID" : int, "postID" : int, "title":string, "sender": string, "message"}] ```|```[{"result":"fail"}] ```|
-
+|채팅 메시지 생성|POST|/chat/create|```[{"postID":int , "title" : string, "sender": string, "message": string}] ```|``` [{"postID":int , "title" : string, "sender": string, "message": string}] ```|``` [{"result":"fail"}] ```|
