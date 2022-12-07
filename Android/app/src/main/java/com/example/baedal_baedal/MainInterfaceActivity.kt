@@ -73,7 +73,7 @@ class MainInterfaceActivity : AppCompatActivity() {
                 val title = jObject.getString("title");
                 val content = jObject.getString("content")
                 val nickName = jObject.getString("nickName")
-                sentenceList.add(ListViewModel("ic_launcher_background", title,"정왕동", content, nickName))
+                sentenceList.add(ListViewModel("ic_launcher_background", nickName, "정왕동",title,content))
             }
 
             val sentenceAdapter = ListViewAdapter(this, sentenceList)
