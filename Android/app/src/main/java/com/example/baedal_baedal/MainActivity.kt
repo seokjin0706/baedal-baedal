@@ -21,7 +21,7 @@ import java.net.URL
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
-    /*[{"result":"success", "userID":string, "passWord": string ,"userName": string ,"phoneNumber": string ,"adress": string ,"NickName": string}]*/
+    /*[{"result":"success", "userID":string, "passWord": string ,"userName": string ,"phoneNumber": string ,"address": string ,"NickName": string}]*/
     lateinit var sharedPreferences: SharedPreferences
     var PREFS_KEY = "prefs"
     var result_KEY = "result"
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
     var passWord_KEY = "passWord"
     var userName_KEY = "userName"
     var phoneNumber_KEY = "phoneNumber"
-    var adress_KEY = "adress"
+    var address_KEY = "address"
     var nickName_KEY = "nickName"
 
 
@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         var passWord = ""
         var userName =  ""
         var phoneNumber =  ""
-        var adress =  ""
+        var address =  ""
         var nickName =  ""
 
 
@@ -92,19 +92,19 @@ class MainActivity : AppCompatActivity() {
                         passWord = jObject.getString("passWord")
                         userName = jObject.getString("userName")
                         phoneNumber = jObject.getString("phoneNumber")
-                        adress = jObject.getString("adress")
+                        address = jObject.getString("address")
                         nickName = jObject.getString("nickName")
-                        Log.d("MMMM", "값 받아온거 확인 - $userID  $passWord  $userName  $phoneNumber  $adress  $nickName")
-                        /*[{"result":"success", "userID":string, "passWord": string ,"userName": string ,"phoneNumber": string ,"adress": string ,"nickName": string}]*/
+                        Log.d("MMMM", "값 받아온거 확인 - $userID  $passWord  $userName  $phoneNumber  $address  $nickName")
+                        /*[{"result":"success", "userID":string, "passWord": string ,"userName": string ,"phoneNumber": string ,"address": string ,"nickName": string}]*/
 
-                        Log.d("MMMM", "success하면 - $userID  $passWord  $userName  $phoneNumber  $adress  $nickName")
+                        Log.d("MMMM", "success하면 - $userID  $passWord  $userName  $phoneNumber  $address  $nickName")
                         val editor: SharedPreferences.Editor = sharedPreferences.edit()
-                        Log.d("MMMM", "$userID  $passWord  $userName  $phoneNumber  $adress  $nickName")
+                        Log.d("MMMM", "$userID  $passWord  $userName  $phoneNumber  $address  $nickName")
                         editor.putString(userID_KEY, userID)
                         editor.putString(passWord_KEY, passWord)
                         editor.putString(userName_KEY, userName)
                         editor.putString(phoneNumber_KEY, phoneNumber)
-                        editor.putString(adress_KEY, adress)
+                        editor.putString(address_KEY, address)
                         editor.putString(nickName_KEY, nickName)
 
                         editor.apply()

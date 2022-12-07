@@ -35,7 +35,7 @@ class SignUpActivity : AppCompatActivity() {
             val add = binding.addressEdit.text.toString()
             val nick = binding.nicknameEdit.text.toString()
 
-            val postData = "userID=$id&passWord=$passwd&userName=$name&phoneNumber=$phone&adress=$add&nickName=$nick"
+            val postData = "userID=$id&passWord=$passwd&userName=$name&phoneNumber=$phone&address=$add&nickName=$nick"
 
 
             Thread{

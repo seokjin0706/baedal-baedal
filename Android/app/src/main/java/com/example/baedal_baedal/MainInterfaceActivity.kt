@@ -25,7 +25,7 @@ class MainInterfaceActivity : AppCompatActivity() {
     var passWord_KEY = "passWord"
     var userName_KEY = "userName"
     var phoneNumber_KEY = "phoneNumber"
-    var adress_KEY = "adress"
+    var address_KEY = "address"
     var nickName_KEY = "nickName"
 
     lateinit var sharedPreferences: SharedPreferences
@@ -40,9 +40,9 @@ class MainInterfaceActivity : AppCompatActivity() {
         var passWord = sharedPreferences.getString(passWord_KEY, null)!!
         var userName = sharedPreferences.getString(userName_KEY, null)!!
         var phoneNumber = sharedPreferences.getString(phoneNumber_KEY, null)!!
-        var adress = sharedPreferences.getString(adress_KEY, null)!!
+        var address = sharedPreferences.getString(address_KEY, null)!!
         var nickName = sharedPreferences.getString(nickName_KEY, null)!!
-        Log.d("MMMM", "MainInterface - $userID  $passWord  $userName  $phoneNumber  $adress  $nickName")
+        Log.d("MMMM", "MainInterface - $userID  $passWord  $userName  $phoneNumber  $address  $nickName")
 
         val writeBtn = findViewById<Button>(R.id.writeBtn)
         val chatBtn = findViewById<Button>(R.id.chatBtn)
