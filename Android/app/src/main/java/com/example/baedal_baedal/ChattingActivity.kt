@@ -37,7 +37,7 @@ class ChattingActivity : AppCompatActivity() {
         val chatList = arrayListOf<ListViewModel2>()
 
         Thread{
-            val url = URL("http://10.0.2.2:3001/chat/" + intent.getStringExtra("postID"))
+            val url = URL("http://localhost:3001/chat/" + intent.getStringExtra("postID"))
 
             val conn = url.openConnection() as HttpURLConnection
             conn.requestMethod = "GET"
@@ -71,7 +71,7 @@ class ChattingActivity : AppCompatActivity() {
             Toast.makeText(this, "${editText.text}", Toast.LENGTH_SHORT).show()
 
             Thread{
-                val url = URL("http://10.0.2.2:3001/chat/create")
+                val url = URL("http://localhost:3001/chat/create")
 
 
                 val conn = url.openConnection() as HttpURLConnection

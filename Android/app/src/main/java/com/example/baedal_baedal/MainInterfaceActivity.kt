@@ -68,7 +68,7 @@ class MainInterfaceActivity : AppCompatActivity() {
         spinner1.adapter = adapter1
 
         Thread{
-            val url = URL("http://10.0.2.2:3001/post")
+            val url = URL("http://localhost:3001/post")
 
             val conn = url.openConnection() as HttpURLConnection
             conn.requestMethod = "GET"
