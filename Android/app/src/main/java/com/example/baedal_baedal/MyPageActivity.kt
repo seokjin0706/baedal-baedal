@@ -18,7 +18,7 @@ import java.net.URL
 
 class MyPageActivity : AppCompatActivity() {
     var PREFS_KEY = "prefs"
-    var adress_KEY = "adress"
+    var address_KEY = "address"
     var nickName_KEY = "nickName"
 
     lateinit var sharedPreferences: SharedPreferences
@@ -42,10 +42,10 @@ class MyPageActivity : AppCompatActivity() {
         // nicknameTxt, addressTxt
         sharedPreferences = getSharedPreferences(PREFS_KEY, Context.MODE_PRIVATE)
         var nickName = sharedPreferences.getString(nickName_KEY, null)!!
-        var adress = sharedPreferences.getString(adress_KEY, null)!!
+        var address = sharedPreferences.getString(address_KEY, null)!!
 
         nickTxt.setText(nickName)
-        addressTxt.setText(adress)
+        addressTxt.setText(address)
 
 
         var jsonString : String? = ""
