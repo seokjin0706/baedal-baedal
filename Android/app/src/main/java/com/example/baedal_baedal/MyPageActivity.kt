@@ -51,7 +51,7 @@ class MyPageActivity : AppCompatActivity() {
         var jsonString : String? = ""
 
         Thread{
-            val url = URL("http://10.0.2.2:3001/post/mypost/${nickName}")
+            val url = URL("http://localhost:3001/post/mypost/${nickName}")
 
             val conn = url.openConnection() as HttpURLConnection
             conn.requestMethod = "GET"

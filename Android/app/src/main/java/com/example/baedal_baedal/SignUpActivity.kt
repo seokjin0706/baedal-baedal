@@ -39,7 +39,7 @@ class SignUpActivity : AppCompatActivity() {
 
 
             Thread{
-                val url = URL("http://10.0.2.2:3001/user/create")
+                val url = URL("http://localhost:3001/user/create")
 
 
                 val conn = url.openConnection() as HttpURLConnection

@@ -42,7 +42,7 @@ class WriteActivity : AppCompatActivity() {
             val postData = "title=$title&content=$content&nickName=$nickName"
 
             Thread{
-                val url = URL("http://10.0.2.2:3001/post/create")
+                val url = URL("http://localhost:3001/post/create")
 
 
                 val conn = url.openConnection() as HttpURLConnection

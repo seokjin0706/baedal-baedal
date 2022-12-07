@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity() {
             val postData = "userID=$id&passWord=$passwd"
 
             Thread{
-                val url = URL("http://10.0.2.2:3001/user/login")
+                val url = URL("http://localhost:3001/user/login")
 
                 val conn = url.openConnection() as HttpURLConnection
                 conn.requestMethod = "POST"
