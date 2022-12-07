@@ -34,7 +34,16 @@ router.get('/:postID', function (req, res, next) {
     }
   });
 });
-
+/* GET mypost listing */
+router.get('/mypost/:nickName', function (req, res, next) {
+  connection.query('select * from post where nickName=?', [req.params.nickName], (err, rows) => {
+    if(rows.length){
+      res.json(rows);
+    }else{
+      res.json([{'result' : 'fail', 'nickName' : ''}]);
+    }
+  });
+});
 /* POST post creating */
 router.post('/create', function (req, res, next) {
   const title = req.body.title;
