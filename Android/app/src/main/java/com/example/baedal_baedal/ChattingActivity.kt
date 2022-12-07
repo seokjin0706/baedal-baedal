@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ListView
 import android.widget.Toast
 import java.io.BufferedReader
 import java.io.DataOutputStream
@@ -24,12 +25,16 @@ class ChattingActivity : AppCompatActivity() {
 
         sharedPreferences = getSharedPreferences(PREFS_KEY, Context.MODE_PRIVATE)
         var nickName = sharedPreferences.getString(nickName_KEY, null)!!
-
+        val chatView = findViewById<ListView>(R.id.chatListView)
         val sendBtn = findViewById<Button>(R.id.chattingBtn)
         val editText = findViewById<EditText>(R.id.chattingEdit)
 
+        val chatList = arrayListOf<ListViewModel2>()
+        chatList.add(ListViewModel2("seokjin", "Hello"))
 
 
+        val chatAdapter = ChattingAdapter(this, chatList)
+        chatView.adapter = chatAdapter
         sendBtn.setOnClickListener {
             Toast.makeText(this, "${editText.text}", Toast.LENGTH_SHORT).show()
         }

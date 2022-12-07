@@ -30,14 +30,15 @@ class ChattingAdapter (val context : Context, val List : ArrayList<ListViewModel
         val view: View = LayoutInflater.from(context).inflate(R.layout.chat_item, null)
 
         /* 위에서 생성된 view를 res-layout-main_lv_item.xml 파일의 각 View와 연결하는 과정이다. */
-        val chatContent = view.findViewById<EditText>(R.id.chattingEdit)
+        val chatSender = view.findViewById<TextView>(R.id.userTxt)
+        val chatMessage = view.findViewById<TextView>(R.id.userTxt2)
 
         /* ArrayList<Dog>의 변수 dog의 이미지와 데이터를 ImageView와 TextView에 담는다. */
         val listViewModel2 = List[position]
         // 사용자 이미지 담는 부분
 
-        chatContent.setText(listViewModel2.content)
-
+        chatSender.text = listViewModel2.sender
+        chatMessage.text = listViewModel2.message
         return view
     }
 }

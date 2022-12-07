@@ -49,7 +49,7 @@ class MainInterfaceActivity : AppCompatActivity() {
         val myPageBtn = findViewById<Button>(R.id.myPageBtn)
 
         val writeIntent = Intent(this, WriteActivity::class.java)
-        val chatIntent = Intent(this, ChatActivity::class.java)
+        val chatIntent = Intent(this, ChattingActivity::class.java)
         val myPageIntent = Intent(this, MyPageActivity::class.java)
         var jsonString : String? = ""
 
