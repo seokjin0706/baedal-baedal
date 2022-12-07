@@ -20,12 +20,22 @@ const Login = () => {
 
       console.log("로그인성공");
       //session 저장 Start
+
+      sessionStorage.setItem("userID", session.userID); //뒤에 값들을 json에서 빼오면됨  //아마도 ... session.userID
+      sessionStorage.setItem("passWord", session.passWord); //session.passWord
+      sessionStorage.setItem("userName", session.UserName); //session.UserName
+      sessionStorage.setItem("phoneNumber", session.Number); //session.Number
+      sessionStorage.setItem("adress", session.adress); //session.adress
+      sessionStorage.setItem("nickName", session.nickName); //session.nickName
+
+      /* // 임시 저장용
       sessionStorage.setItem("userID", "userID"); //뒤에 값들을 json에서 빼오면됨  //아마도 ... session.userID
       sessionStorage.setItem("passWord", "password"); //session.passWord
       sessionStorage.setItem("userName", "오바자"); //session.UserName
       sessionStorage.setItem("phoneNumber", "Number"); //session.Number
       sessionStorage.setItem("adress", "adress"); //session.adress
       sessionStorage.setItem("nickName", "닉네임"); //session.nickName
+      */
       //session 저장 End
       document.location.href = "/List"; //리스트 페이지로 이동
     });

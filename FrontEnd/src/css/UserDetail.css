@@ -20,7 +20,7 @@ body {
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.Con-userDetail .Container-userDetail .Container-userId {
+.Con-userDetail .Container-userDetail #Container-userId {
   font-size: 35px;
-  margin-right: 4rem;
+  margin-right: 3rem;
 }/*# sourceMappingURL=UserDetail.css.map */

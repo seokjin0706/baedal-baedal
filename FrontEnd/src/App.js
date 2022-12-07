@@ -9,6 +9,8 @@ import UserDetail from "./pages/UserDetail";
 function App() {
   return (
     <Routes>
+      @import
+      url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
       <Route path="/" element={<Home />} />
       <Route path="/PostCreate" element={<PostCreate />} />
       <Route path="/UserDetail" element={<UserDetail />} />
