@@ -29,12 +29,12 @@ class MainInterfaceActivity : AppCompatActivity() {
     var nickName_KEY = "nickName"
 
     lateinit var sharedPreferences: SharedPreferences
-
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_interface)
 
+        val showWriteIntent = Intent(this, ShowWriteActivity::class.java)
         // 세션
         sharedPreferences = getSharedPreferences(PREFS_KEY, Context.MODE_PRIVATE)
         var userID = sharedPreferences.getString(userID_KEY, null)!!
@@ -66,6 +66,7 @@ class MainInterfaceActivity : AppCompatActivity() {
 
                 }
             }
+            val listview = findViewById<ListView>(R.id.sentenceListView)
             val sentenceList = arrayListOf<ListViewModel>()
             val jArray = JSONArray(jsonString)
             for(i in 0 until jArray.length()){
@@ -74,10 +75,16 @@ class MainInterfaceActivity : AppCompatActivity() {
                 val content = jObject.getString("content")
                 val nickName = jObject.getString("nickName")
                 sentenceList.add(ListViewModel("ic_launcher_background", nickName, "정왕동",title,content))
+
             }
 
             val sentenceAdapter = ListViewAdapter(this, sentenceList)
-            val listview = findViewById<ListView>(R.id.sentenceListView)
+            listview.setOnItemClickListener { parent, view, position, id ->
+
+                startActivity(showWriteIntent)
+
+
+            }
 
             listview.adapter = sentenceAdapter
 

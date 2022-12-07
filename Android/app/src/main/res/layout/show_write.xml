@@ -32,6 +32,7 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/backButton"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_width="80dp"
@@ -94,6 +95,7 @@
     </ScrollView>
 
     <Button
+        android:id="@+id/chatBtn2"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="채팅하기"/>
