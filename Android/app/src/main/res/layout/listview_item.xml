@@ -9,13 +9,7 @@
     android:background="@color/white"
     android:padding="5dp">
 
-    <ImageView
-        android:id="@+id/userImg"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:src="@drawable/test_img"
-        android:background="@drawable/list_img_round"
-        android:layout_marginEnd="10dp"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
@@ -67,6 +61,8 @@
             android:layout_marginStart="16dp"
             android:textSize="16sp"
             android:text="Content"
+            android:maxLines="1"
+            android:ellipsize="end"
             android:fontFamily="@font/my_small_font"
             android:layout_weight="1"/>
     </LinearLayout>

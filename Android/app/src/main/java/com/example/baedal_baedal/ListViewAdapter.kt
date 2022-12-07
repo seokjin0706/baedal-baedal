@@ -41,7 +41,6 @@ class ListViewAdapter (val context : Context, val List : ArrayList<ListViewModel
         val view: View = LayoutInflater.from(context).inflate(R.layout.listview_item, null)
 
         /* 위에서 생성된 view를 res-layout-main_lv_item.xml 파일의 각 View와 연결하는 과정이다. */
-        val userPhoto = view.findViewById<ImageView>(R.id.userImg)
         val name = view.findViewById<TextView>(R.id.nameTxt)
         val title = view.findViewById<TextView>(R.id.titleTxt)
         val address = view.findViewById<TextView>(R.id.addressTxt)
@@ -51,7 +50,6 @@ class ListViewAdapter (val context : Context, val List : ArrayList<ListViewModel
         val listViewModel = List[position]
         // 사용자 이미지 담는 부분
         val resourceId = context.resources.getIdentifier(listViewModel.img, "drawable", context.packageName)
-        userPhoto.setImageResource(resourceId)
         name.text = listViewModel.name
         title.text = listViewModel.title
         address.text = listViewModel.address
