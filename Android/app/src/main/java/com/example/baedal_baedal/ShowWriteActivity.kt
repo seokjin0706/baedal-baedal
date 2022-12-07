@@ -12,7 +12,7 @@ class ShowWriteActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.show_write)
-
+        
 
         val showWriteTitle = findViewById<TextView>(R.id.title_tv)
         val showWriteNickName = findViewById<TextView>(R.id.nickName_tv)
@@ -30,7 +30,8 @@ class ShowWriteActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.chatBtn2).setOnClickListener {
-            // 채팅할 곳
+            val chatIntent = Intent(this, ChatActivity::class.java)
+            startActivity(chatIntent)
         }
     }
 

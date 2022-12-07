@@ -1,4 +1,6 @@
 package com.example.baedal_baedal
 
-class ChatListModel {
-}
+data class ChatListModel (
+    val sender : String,
+    val message : String
+)
