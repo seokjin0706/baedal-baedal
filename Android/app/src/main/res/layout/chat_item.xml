@@ -13,7 +13,6 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
-        android:weightSum="3"
         android:background="@drawable/list_round"
         android:paddingTop="3dp"
         >
@@ -23,14 +22,19 @@
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:background="@drawable/chatting_border"
-
-            android:text="사용자1" />
+            android:layout_gravity="center"
+            android:text="사용자1"
+            android:textSize="15sp"
+            android:fontFamily="@font/my_font"
+            android:layout_marginStart="10dp"/>
         <TextView
             android:id="@+id/userTxt2"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/chatting_border"
-
-            android:text="내용" />
+            android:layout_gravity="center"
+            android:text="내용"
+            android:textSize="15sp"
+            android:fontFamily="@font/my_small_font"
+            android:layout_marginStart="10dp"/>
     </LinearLayout>
 </LinearLayout>
