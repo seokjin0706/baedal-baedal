@@ -2,6 +2,7 @@ package com.example.baedal_baedal
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.SharedPreferences
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -59,3 +60,13 @@ class ListViewAdapter (val context : Context, val List : ArrayList<ListViewModel
         return view
     }
 }
+
+
+
+
+
+
+
+
+
+
