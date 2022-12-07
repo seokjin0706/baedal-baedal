@@ -8,10 +8,6 @@ class ChatActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat)
-        var chatList = arrayListOf<ChatListModel>()
-        val listview = findViewById<ListView>(R.id.chatListView)
 
-        val chatAdapter = ChatListViewAdapter(this, chatList)
-        listview.adapter = chatAdapter
     }
 }
