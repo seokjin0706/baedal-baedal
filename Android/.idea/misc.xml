@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/seokj/Desktop/baedal-baedal/Android/app/src/main/res/drawable/ic_back.xml" value="0.1" />
+        <entry key="..\:/Users/seokj/Desktop/baedal-baedal/Android/app/src/main/res/drawable/list_img_round.xml" value="0.1" />
+        <entry key="..\:/Users/seokj/Desktop/baedal-baedal/Android/app/src/main/res/drawable/list_round.xml" value="0.1" />
         <entry key="..\:/Users/seokj/Desktop/baedal-baedal/Android/app/src/main/res/layout/activity_channel.xml" value="0.264" />
         <entry key="..\:/Users/seokj/Desktop/baedal-baedal/Android/app/src/main/res/layout/activity_chat.xml" value="0.2" />
         <entry key="..\:/Users/seokj/Desktop/baedal-baedal/Android/app/src/main/res/layout/activity_login.xml" value="0.13802083333333334" />
@@ -11,6 +14,7 @@
         <entry key="..\:/Users/seokj/Desktop/baedal-baedal/Android/app/src/main/res/layout/chatlist_item_my.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/seokj/Desktop/baedal-baedal/Android/app/src/main/res/layout/chatlist_item_other.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/seokj/Desktop/baedal-baedal/Android/app/src/main/res/layout/listview_item.xml" value="0.4" />
+        <entry key="..\:/Users/seokj/Desktop/baedal-baedal/Android/app/src/main/res/layout/show_comment.xml" value="0.12395833333333334" />
         <entry key="..\:/Users/seokj/Desktop/baedal-baedal/Android/app/src/main/res/layout/show_write.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/seokj/Desktop/baedal-baedal/Android/app/src/main/res/layout/temp.xml" value="0.12129629629629629" />
       </map>
