@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../css/PostCreate.css";
+import Header from "./Header";
 
 const PostCreate = () => {
   const [title, setTitle] = useState("");
@@ -27,6 +28,7 @@ const PostCreate = () => {
 
   return (
     <div>
+      <Header />
       <div className="conm">
         <div className="Container-Create">
           <input

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../css/UserDetail.css";
+import Header from "./Header";
 
 const UserDetail = () => {
   const [abc, setabc] = useState("");
@@ -35,6 +36,7 @@ const UserDetail = () => {
 
   return (
     <div>
+      <Header />
       <div className="Con-userDetail">
         <div className="Container-userDetail">
           <div id="Container-userId">undefined</div>
