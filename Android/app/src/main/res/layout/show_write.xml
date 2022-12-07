@@ -32,6 +32,7 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/backButton"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_width="80dp"
@@ -59,14 +60,22 @@
                     android:src="@mipmap/ic_launcher"/>
 
                 <TextView
-                    android:id="@+id/date_tv"
+                    android:id="@+id/nickName_tv"
                     android:padding="16dp"
                     android:background="#eeeeee"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="닉네임 / 신뢰도\n주소"
-
+                    android:text="닉네임"
+                    />
+                <TextView
+                    android:id="@+id/address_tv"
+                    android:padding="16dp"
+                    android:background="#eeeeee"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="주소"
                     />
             </LinearLayout>
             <TextView
@@ -94,6 +103,7 @@
     </ScrollView>
 
     <Button
+        android:id="@+id/chatBtn2"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="채팅하기"/>

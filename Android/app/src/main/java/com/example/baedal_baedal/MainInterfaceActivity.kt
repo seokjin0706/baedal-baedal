@@ -25,11 +25,10 @@ class MainInterfaceActivity : AppCompatActivity() {
     var passWord_KEY = "passWord"
     var userName_KEY = "userName"
     var phoneNumber_KEY = "phoneNumber"
-    var adress_KEY = "adress"
+    var address_KEY = "address"
     var nickName_KEY = "nickName"
 
     lateinit var sharedPreferences: SharedPreferences
-
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,9 +40,9 @@ class MainInterfaceActivity : AppCompatActivity() {
         var passWord = sharedPreferences.getString(passWord_KEY, null)!!
         var userName = sharedPreferences.getString(userName_KEY, null)!!
         var phoneNumber = sharedPreferences.getString(phoneNumber_KEY, null)!!
-        var adress = sharedPreferences.getString(adress_KEY, null)!!
+        var address = sharedPreferences.getString(address_KEY, null)!!
         var nickName = sharedPreferences.getString(nickName_KEY, null)!!
-        Log.d("MMMM", "MainInterface - $userID  $passWord  $userName  $phoneNumber  $adress  $nickName")
+        Log.d("MMMM", "MainInterface - $userID  $passWord  $userName  $phoneNumber  $address  $nickName")
 
         val writeBtn = findViewById<Button>(R.id.writeBtn)
         val chatBtn = findViewById<Button>(R.id.chatBtn)
@@ -66,19 +65,32 @@ class MainInterfaceActivity : AppCompatActivity() {
 
                 }
             }
+            val listview = findViewById<ListView>(R.id.sentenceListView)
             val sentenceList = arrayListOf<ListViewModel>()
             val jArray = JSONArray(jsonString)
+            var data = ArrayList<HashMap<String, String> >()
             for(i in 0 until jArray.length()){
                 val jObject = jArray.getJSONObject(i)
                 val title = jObject.getString("title");
                 val content = jObject.getString("content")
                 val nickName = jObject.getString("nickName")
                 sentenceList.add(ListViewModel("ic_launcher_background", nickName, "정왕동",title,content))
+                val element = HashMap<String, String>()
+                element.put("title", title)
+                element.put("content", content)
+                element.put("nickName", nickName)
+                element.put("address", "정왕동")
+                data.add(element)
+
             }
 
             val sentenceAdapter = ListViewAdapter(this, sentenceList)
-            val listview = findViewById<ListView>(R.id.sentenceListView)
-
+            listview.setOnItemClickListener { parent, view, position, id ->
+                val showWriteIntent = Intent(this, ShowWriteActivity::class.java)
+                showWriteIntent.putExtra("data", data)
+                showWriteIntent.putExtra("index", position)
+                startActivity(showWriteIntent)
+            }
             listview.adapter = sentenceAdapter
 
         }.start()

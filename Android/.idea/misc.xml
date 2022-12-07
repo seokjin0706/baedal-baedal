@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/seokj/Desktop/baedal-baedal/Android/app/src/main/res/layout/activity_chat.xml" value="0.13802083333333334" />
+        <entry key="..\:/Users/seokj/Desktop/baedal-baedal/Android/app/src/main/res/layout/activity_login.xml" value="0.13802083333333334" />
         <entry key="..\:/Users/seokj/Desktop/baedal-baedal/Android/app/src/main/res/layout/activity_main_interface.xml" value="0.18518518518518517" />
         <entry key="..\:/Users/seokj/Desktop/baedal-baedal/Android/app/src/main/res/layout/listview_item.xml" value="0.4" />
+        <entry key="..\:/Users/seokj/Desktop/baedal-baedal/Android/app/src/main/res/layout/show_write.xml" value="0.20520833333333333" />
       </map>
     </option>
   </component>

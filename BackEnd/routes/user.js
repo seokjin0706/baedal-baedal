@@ -24,14 +24,14 @@ router.post('/create', function (req, res, next) {
   const passWord = req.body.passWord;
   const userName = req.body.userName;
   const phoneNumber = req.body.phoneNumber;
-  const adress = req.body.adress;
+  const address = req.body.address;
   const nickName = req.body.nickName;
   const insert_sql = {
     userID: userID,
     passWord: passWord,
     userName: userName,
     phoneNumber: phoneNumber,
-    adress: adress,
+    address: address,
     nickName: nickName,
   }
   connection.query('select userID from user where userID=?', [userID], (err, rows) => {
@@ -59,11 +59,11 @@ router.post('/login', function (req, res, next) {
       req.session.passWord = rows[0].passWord;
       req.session.userName = rows[0].userName;
       req.session.phoneNumber = rows[0].phoneNumber;
-      req.session.adress = rows[0].adress;
+      req.session.address = rows[0].address;
       req.session.nickName = rows[0].nickName;
       req.session.isLogined = true;
       req.session.save(() => {
-        res.json({"result":"success", "userID": rows[0].userID, "passWord": rows[0].passWord,"userName": rows[0].userName,"phoneNumber": rows[0].phoneNumber ,"adress": rows[0].adress ,"nickName": rows[0].nickName});
+        res.json({"result":"success", "userID": rows[0].userID, "passWord": rows[0].passWord,"userName": rows[0].userName,"phoneNumber": rows[0].phoneNumber ,"address": rows[0].address ,"nickName": rows[0].nickName});
       })
     } else {
       res.json({ 'result': 'fail' });
@@ -78,7 +78,7 @@ router.post('/logout', function (req, res, next) {
   delete req.session.passWord;
   delete req.session.userName;
   delete req.session.phoneNumber;
-  delete req.session.adress;
+  delete req.session.address;
   delete req.session.nickName;
   delete req.session.isLogined;
   req.session.save(() => {
