@@ -60,7 +60,10 @@ class ChattingActivity : AppCompatActivity() {
 
 
             val chatAdapter = ChattingAdapter(this, chatList)
-            chatView.adapter = chatAdapter
+            runOnUiThread {
+
+                chatView.adapter = chatAdapter
+            }
 
         }.start()
 
