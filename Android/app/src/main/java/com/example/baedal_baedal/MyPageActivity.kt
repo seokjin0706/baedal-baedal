@@ -90,7 +90,10 @@ class MyPageActivity : AppCompatActivity() {
                 showWriteIntent.putExtra("index", position)
                 startActivity(showWriteIntent)
             }
-            listview.adapter = sentenceAdapter
+            runOnUiThread {
+
+                listview.adapter = sentenceAdapter
+            }
 
         }.start()
 
